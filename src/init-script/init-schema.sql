@@ -30,12 +30,13 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `users_database`.`receipt`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `users_database`.`receipt` (
-  `id` INT(11) GENERATED ALWAYS AS () STORED,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
   `tax_code` VARCHAR(45) NULL DEFAULT NULL,
   `price` FLOAT NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 
