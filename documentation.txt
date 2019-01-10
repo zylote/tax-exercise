@@ -1,0 +1,92 @@
+documentation for rest request : 
+1. to get all receipt: http://localhost:8080/rest/receipts/all
+   description : it will return all the receipt data not filtered and not sorted.
+   return value : array of json as example below.
+   [
+    {
+        "id": 1,
+        "name": "handy",
+        "taxCode": "1",
+        "taxType": "Food & Beverage",
+        "refundable": true,
+        "price": 1000,
+        "tax": 100,
+        "amount": 1100
+    },
+	{
+        "id": 2,
+        "name": "acong",
+        "taxCode": "2",
+        "taxType": "Tobbaco",
+        "refundable": false,
+        "price": 1000,
+        "tax": 30,
+        "amount": 1030
+    }
+   ]
+   
+
+2. to get single receipt by id : http://localhost:8080/rest/receipts/receipt/{id}
+   description : replace {id} with id of the receipt.
+   return value : a single json object as example below.
+   [
+    {
+        "id": 1,
+        "name": "handy",
+        "taxCode": "1",
+        "taxType": "Food & Beverage",
+        "refundable": true,
+        "price": 1000,
+        "tax": 100,
+        "amount": 1100
+    }
+   ]
+
+3. to save new receipt or update : http://localhost:8080/rest/receipts/load
+   description: will update if id is already exists. will insert if id is not exists.
+                required to submit body with name, id, and price.
+   return value : updated array of json as example below.
+   [
+    {
+        "id": 1,
+        "name": "handy",
+        "taxCode": "1",
+        "taxType": "Food & Beverage",
+        "refundable": true,
+        "price": 1000,
+        "tax": 100,
+        "amount": 1100
+    },
+	{
+        "id": 2,
+        "name": "acong",
+        "taxCode": "2",
+        "taxType": "Tobbaco",
+        "refundable": false,
+        "price": 1000,
+        "tax": 30,
+        "amount": 1030
+    }
+   ]
+   
+4. to delete all receipt: http://localhost:8080/rest/receipts/deleteAll
+   description: will delete all receipts.
+   return value : updated array of json as example below.
+   []
+   
+5. to delete single receipt by id:  http://localhost:8080/rest/receipts/delete/{id}
+   description: will delete all receipts.
+   return value : updated array of json as example below. http://localhost:8080/rest/receipts/delete/2
+   [
+    {
+        "id": 1,
+        "name": "handy",
+        "taxCode": "1",
+        "taxType": "Food & Beverage",
+        "refundable": true,
+        "price": 1000,
+        "tax": 100,
+        "amount": 1100
+    }
+   ]
+
